@@ -1,16 +1,28 @@
+/**
+ * Sends an email notification when a referral from is submitted with a related service counselor.
+ * A trigger is set to run this function on form submit.
+ * 
+ * @author Alvaro Gomez
+ *         Academic Technology Coach
+ *         Office: 210-397-9408
+ *         Cell: 210-363-1577
+ */
 function sendEmail() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var lastRow = sheet.getLastRow();
-  var cell = sheet.getRange("Y" + lastRow);
-  var serviceProvider = cell.getValue();
-  var cell2 = sheet.getRange("B" + lastRow); 
-  var submitter = cell2.getValue();
-  var cellValue = cell.getValue();
-  
-  if (cellValue != 'N/A') {
-    var email = "rhonda.george@nisd.net, yvonne.larralde@nisd.net, alvaro.gomez@nisd.net";
-    var subject = "Referral Form with Related Service Counselor";
-    var message = "A referral form was submitted by " + submitter + " that indicated "  + serviceProvider + " was the related services counselor currently involved in the referral. Here is the link to the NISD Social Services Referral Form: https://docs.google.com/spreadsheets/d/1GBsg40_DTRNEEo3C7rziWUiBbELQ8SRnG8IEXn7Rm_Y/edit?resourcekey#gid=913572678" ;
-    MailApp.sendEmail(email, subject, message);
+
+  if (lastRow === 0) return; // Exit if the sheet is empty
+  var serviceProvider = sheet.getRange("Y" + lastRow).getValue();
+  var submitter = sheet.getRange("B" + lastRow).getValue();
+
+  if (serviceProvider !== "N/A") {
+    const emailRecipients = "rhonda.george@nisd.net, yvonne.larralde@nisd.net, alvaro.gomez@nisd.net";
+    const subject = "Referral Form with Related Service Counselor";
+    const referralFormLink =
+      "https://docs.google.com/spreadsheets/d/1GBsg40_DTRNEEo3C7rziWUiBbELQ8SRnG8IEXn7Rm_Y/edit?resourcekey#gid=913572678";
+
+    const message = `A referral form was submitted by ${submitter} that indicated ${serviceProvider} was the related services counselor currently involved in the referral. Here is the link to the NISD Social Services Referral Form: ${referralFormLink}`;
+
+    MailApp.sendEmail(emailRecipients, subject, message);
   }
 }
