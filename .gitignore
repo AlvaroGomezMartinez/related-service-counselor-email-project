@@ -1,0 +1,29 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore node modules and package files (if using clasp with npm)
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Ignore clasp local settings
+.clasp.json
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore backup files
+*~
+
+# Ignore temporary files
+*.tmp
+
+# Ignore env files
+.env
+.env.*
+
+# Ignore Thumbs.db (Windows)
+Thumbs.db

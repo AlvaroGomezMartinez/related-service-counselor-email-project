@@ -1,0 +1,20 @@
+# Ignore everything except Code.js and appsscript.json
+**
+!Code.js
+!appsscript.json
+
+# Ignore node modules and config files
+node_modules/**
+.vscode/**
+.git/**
+.gitignore
+.claspignore
+package.json
+package-lock.json
+npm-debug.log
+*.log
+*.tmp
+.env
+.env.*
+.DS_Store
+Thumbs.db
