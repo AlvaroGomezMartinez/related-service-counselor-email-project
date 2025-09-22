@@ -1,7 +1,7 @@
 /**
  * Constants for email recipients and referral form link.
  */
-const EMAIL_RECIPIENTS = "rhonda.george@nisd.net, yvonne.larralde@nisd.net, alvaro.gomez@nisd.net";
+const EMAIL_RECIPIENTS = "rhonda.george@nisd.net, yvonne.larralde@nisd.net";
 const REFERRAL_FORM_LINK = "https://docs.google.com/spreadsheets/d/1GBsg40_DTRNEEo3C7rziWUiBbELQ8SRnG8IEXn7Rm_Y/edit?resourcekey#gid=913572678";
 
 /**
